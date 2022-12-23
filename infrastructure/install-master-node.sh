@@ -74,8 +74,8 @@ tar -xf mysql-cluster_8.0.31-1ubuntu20.04_amd64.deb-bundle.tar -C install/
 wget https://downloads.mysql.com/docs/sakila-db.tar.gz
 tar -zxvf sakila-db.tar.gz
 
-cat <<EOF > /root/complete-install.sh
-dpkg -i /install/*.deb
+cat <<EOF > /home/ubuntu/complete-install.sh
+dpkg --auto-deconfigure -i /install/*.deb
 
 cat <<EOL > /etc/mysql/mysql.conf.d/mysqld.cnf
 [mysqld]
@@ -90,12 +90,12 @@ systemctl restart mysql
 mysql -u root -p < /sakila-db/sakila-schema.sql
 mysql -u root -p < /sakila-db/sakila-data.sql
 mysql -u root -p <<EOL
-CREATE USER 'app'@'localhost' IDENTIFIED WITH authentication_plugin BY 'passw0rd';
-GRANT ALL PRIVILEGES ON *.* TO 'app'@'localhost';
+CREATE USER 'app'@'10.0.0.0/255.255.255.0' IDENTIFIED BY 'passw0rd';
+GRANT ALL PRIVILEGES ON *.* TO 'app'@'10.0.0.0/255.255.255.0';
 FLUSH PRIVILEGES;
 CREATE DATABASE dbtest;
 EOL
 
 EOF
 
-chmod +x /root/complete-install.sh
+chmod +x /home/ubuntu/complete-install.sh

@@ -21,3 +21,15 @@ def connect(target):
     
 def disconnect(target):
     subprocess.run(f"systemctl stop database-tunnel@{target}")
+
+target = "10.0.0.13"
+
+with connect(target):
+    with connection.cursor() as cursor:
+        sql = "SELECT * FROM actors"
+        cursor.execute(sql)
+        result = cursor.fetchall()
+        print(result)
+
+disconnect(target)
+
