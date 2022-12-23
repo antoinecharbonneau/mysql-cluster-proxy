@@ -75,9 +75,8 @@ wget https://downloads.mysql.com/docs/sakila-db.tar.gz
 tar -zxvf sakila-db.tar.gz
 
 cat <<EOF > /root/complete-install.sh
-dpkg -i install/*.deb
+dpkg -i /install/*.deb
 
-mkdir /etc/mysql
 cat <<EOL > /etc/mysql/mysql.conf.d/mysqld.cnf
 [mysqld]
 ndbcluster
