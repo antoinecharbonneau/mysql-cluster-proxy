@@ -31,7 +31,7 @@ module "ec2_instance_proxy" {
   private_ip                  = "10.0.0.64"
   associate_public_ip_address = true
 
-  user_data = templatefile("../install-proxy.sh", {})
+  user_data = templatefile("../install-proxy-node.sh", {})
 
   tags = {
     Terraform       = "true"

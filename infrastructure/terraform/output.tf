@@ -22,3 +22,7 @@ output "slave_2_public_ip" {
 output "slave_3_public_ip" {
   value = module.ec2_instance_slaves["3"].public_ip
 }
+
+output "proxy_public_ip" {
+  value = module.ec2_instance_proxy.public_ip
+}
