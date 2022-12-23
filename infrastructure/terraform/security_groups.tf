@@ -27,35 +27,15 @@ module "sg" {
       description = "Allow HTTP from anywhere"
     },
     {
-      key         = "MySql"
+      key         = "Internal"
       type        = "ingress"
       from_port   = 0
       to_port     = 65535
       protocol    = "tcp"
       cidr_blocks = ["10.0.0.0/24"]
       self        = null
-      description = "Allow MySQL from within the security group"
+      description = "Allow all ports within the security group"
     },
-    # {
-    #   key         = "NDB-mgmt"
-    #   type        = "ingress"
-    #   from_port   = 1186
-    #   to_port     = 1186
-    #   protocol    = "tcp"
-    #   cidr_blocks = ["10.0.0.0/24"]
-    #   self        = null
-    #   description = "Allow NDB mgmt from within the security group"
-    # },
-    # {
-    #   key         = "NDB-data"
-    #   type        = "ingress"
-    #   from_port   = 2202
-    #   to_port     = 2202
-    #   protocol    = "tcp"
-    #   cidr_blocks = ["10.0.0.0/24"]
-    #   self        = null
-    #   description = "Allow NDB data from within the security group"
-    # },
     {
       key         = "Ping"
       type        = "ingress"
