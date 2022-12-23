@@ -87,11 +87,14 @@ EOL
 
 systemctl restart mysql
 
-read -p "Enter MySQL password: "$'\n' -s password
+echo -n "Enter MySQL password: "
+stty -echo
+read password
+stty echo
 
-mysql -u root -p\\\$password < /sakila-db/sakila-schema.sql
-mysql -u root -p\\\$password < /sakila-db/sakila-data.sql
-mysql -u root -p\\\$password <<EOL
+mysql -u root -p\$password < /sakila-db/sakila-schema.sql
+mysql -u root -p\$password < /sakila-db/sakila-data.sql
+mysql -u root -p\$password <<EOL
 CREATE USER 'app'@'10.0.0.0/255.255.255.0' IDENTIFIED BY 'passw0rd';
 GRANT ALL PRIVILEGES ON *.* TO 'app'@'10.0.0.0/255.255.255.0';
 FLUSH PRIVILEGES;
