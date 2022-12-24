@@ -11,9 +11,9 @@ apt-get install -y \
 echo "${SSH-KEY}" > /etc/key.pem
 chmod 0600 /etc/key.pem
 
-git clone https://github.com/antoinecharbonneau/mysql-cluster-proxy.git
+git clone https://github.com/antoinecharbonneau/mysql-cluster-proxy.git /home/ubuntu/
 
-cd mysql-cluster-proxy/proxy/
+cd /home/ubuntu/mysql-cluster-proxy/proxy/
 
 pip3 install -r requirements.txt
 

@@ -13,7 +13,8 @@ apt-get install -y \
     mecab-ipadic \
     mecab-ipadic-utf8 \
     mecab-utils \
-    sysbench
+    sysbench \
+    git
 
 
 wget https://dev.mysql.com/get/Downloads/MySQL-Cluster-8.0/mysql-cluster-community-management-server_8.0.31-1ubuntu20.04_amd64.deb
@@ -73,6 +74,8 @@ tar -xf mysql-cluster_8.0.31-1ubuntu20.04_amd64.deb-bundle.tar -C install/
 
 wget https://downloads.mysql.com/docs/sakila-db.tar.gz
 tar -zxvf sakila-db.tar.gz
+
+git clone https://github.com/antoinecharbonneau/mysql-cluster-proxy.git /home/ubuntu/
 
 cat <<EOF > /home/ubuntu/complete-install.sh
 dpkg --auto-deconfigure -i /install/*.deb

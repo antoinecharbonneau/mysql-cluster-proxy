@@ -5,7 +5,8 @@ sudo apt-get update
 sudo apt-get install -y \
     mysql-server \
     wget \
-    sysbench
+    sysbench \
+    git
 
 wget https://downloads.mysql.com/docs/sakila-db.tar.gz
 tar -zxvf sakila-db.tar.gz
@@ -17,3 +18,5 @@ GRANT ALL PRIVILEGES ON *.* TO 'app'@'localhost';
 FLUSH PRIVILEGES;
 CREATE DATABASE dbtest;
 EOF
+
+git clone https://github.com/antoinecharbonneau/mysql-cluster-proxy.git /home/ubuntu/
