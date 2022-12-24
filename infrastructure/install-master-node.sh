@@ -75,7 +75,7 @@ tar -xf mysql-cluster_8.0.31-1ubuntu20.04_amd64.deb-bundle.tar -C install/
 wget https://downloads.mysql.com/docs/sakila-db.tar.gz
 tar -zxvf sakila-db.tar.gz
 
-git clone https://github.com/antoinecharbonneau/mysql-cluster-proxy.git /home/ubuntu/
+git clone https://github.com/antoinecharbonneau/mysql-cluster-proxy.git /home/ubuntu/mysql-cluster-proxy
 
 cat <<EOF > /home/ubuntu/complete-install.sh
 dpkg --auto-deconfigure -i /install/*.deb
