@@ -19,4 +19,4 @@ FLUSH PRIVILEGES;
 CREATE DATABASE dbtest;
 EOF
 
-git clone https://github.com/antoinecharbonneau/mysql-cluster-proxy.git /home/ubuntu/
+git clone https://github.com/antoinecharbonneau/mysql-cluster-proxy.git /home/ubuntu/mysql-cluster-proxy

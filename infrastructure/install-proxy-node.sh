@@ -11,10 +11,10 @@ apt-get install -y \
 echo "${SSH-KEY}" > /etc/key.pem
 chmod 0600 /etc/key.pem
 
-git clone https://github.com/antoinecharbonneau/mysql-cluster-proxy.git /home/ubuntu/
+git clone https://github.com/antoinecharbonneau/mysql-cluster-proxy.git /home/ubuntu/mysql-cluster-proxy
 
 cd /home/ubuntu/mysql-cluster-proxy/proxy/
 
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 
 FLASK_APP=proxy.py flask run
